@@ -29,7 +29,7 @@ if __name__ == '__main__':
         #print(student["Last_name"])
     
     #get can be used to get a key and, in case this key is not present it will get the second argument
-        #if not, it will take tha actual existent key 
+        #if not, it will take the actual existent key 
     print(student.get("Last_name","Unknow"))
     
     #You can access to the keys
