@@ -47,6 +47,7 @@ def add_student(name, student_id=332):
 ADD function to store the data in a txt file
 """
 
+
 def save_file(student):
     try:
         f = open("students.txt", "a")       # Append or create a new file
