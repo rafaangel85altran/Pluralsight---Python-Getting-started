@@ -32,10 +32,11 @@ def get_students_titlecase():
         students_titlecase = student["name"].title()
     return students_titlecase
 
-
+""" DISABLED, USELESS NOW
 def print_students_dict_org():
     for x in students:
         print (x)  
+"""
 
     
 def add_student(name, student_id=332):
@@ -49,8 +50,7 @@ ADD function to store the data in a txt file
 def save_file(student):
     try:
         f = open("students.txt", "a")       # Append or create a new file
-        for x in student:
-            f.write(x + "\n")               # 
+        f.write(student + "\n")        # 
         f.close()
     except TypeError as error:
         print("File could not be saved")
@@ -69,11 +69,16 @@ student_list = get_students_titlecase()
 
 
 print("##### Welcome to the add_students program #####")    
+read_file()
+print("###############################################")
+
 response = input("Do you want to add a user to your list? (Y/N)")
 
 while response == "Y":
     student_name = input("Enter student name: ")
+    save_file(student_name)
     student_id = input("Enter student ID: ")
+    save_file(student_id)
     add_student(student_name, student_id)
     response = input("Do you still want to add more students? (Y/N)")
 
@@ -83,7 +88,6 @@ if students_id_check() == True:
 else:
     save_file(students)
     
-print_students_dict_org()
 read_file()
 
 
